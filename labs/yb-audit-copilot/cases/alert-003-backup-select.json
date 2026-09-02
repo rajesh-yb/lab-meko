@@ -1,0 +1,36 @@
+{
+  "case_id": "CASE-0912",
+  "alert_id": "YB-AUD-003",
+  "fired_at": "2026-09-02T02:18:00Z",
+  "queue": "ysql-audit",
+  "score": 0.58,
+  "score_reason": "bulk_select_on_payments_from_replica",
+  "universe": {
+    "id": "univ-prod-us-east-1",
+    "name": "prod-us-east-1",
+    "env": "production"
+  },
+  "session": {
+    "database": "helios_orders",
+    "role": "yb_backup",
+    "client_addr": "10.8.4.12",
+    "application_name": "pg_dump",
+    "cab_ticket": null
+  },
+  "statement": {
+    "class": "READ",
+    "command": "SELECT",
+    "object": "public.payments",
+    "sql_redacted": "SELECT * FROM public.payments"
+  },
+  "signals": {
+    "schema_freeze_active": true,
+    "freeze_ends_at": "2026-09-15T00:00:00Z",
+    "privilege_grant": false,
+    "copy_export": false,
+    "new_client_cidr": false,
+    "host_allowlisted": true,
+    "replica_read": true
+  },
+  "notes": "Overnight window. Host 10.8.4.12 is the backup replica reader. SELECT only; no COPY."
+}

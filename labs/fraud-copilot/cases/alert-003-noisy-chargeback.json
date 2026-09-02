@@ -1,0 +1,38 @@
+{
+  "case_id": "CASE-0891",
+  "alert_id": "ALT-003",
+  "fired_at": "2026-08-27T12:20:00Z",
+  "queue": "payments-risk",
+  "score": 0.62,
+  "score_reason": "cardholder_dispute_not_recognized",
+  "merchant": {
+    "id": "M-0777",
+    "name": "Atlas Fitness",
+    "mcc": "7991",
+    "country": "US"
+  },
+  "transaction": {
+    "id": "TXN-C101",
+    "type": "card_presentment",
+    "amount_usd": 89.00,
+    "currency": "USD",
+    "invoice_ref": "MEM-AUG",
+    "submitted_at": "2026-08-01T18:00:00Z"
+  },
+  "prior_match": null,
+  "customer": {
+    "account_id": "ACC-4412",
+    "display_name": "M. Okonkwo",
+    "device_known": true,
+    "geo_matches_enrollment": true,
+    "password_reset_24h": false,
+    "payout_changed_24h": false
+  },
+  "signals": {
+    "new_device": false,
+    "impossible_travel": false,
+    "ato_bundle": false,
+    "dispute_reason": "not_recognized"
+  },
+  "notes": "Monthly membership. Device and geo match enrollment. Three prior Atlas Fitness disputes in 2026 were all won by the merchant on representment."
+}

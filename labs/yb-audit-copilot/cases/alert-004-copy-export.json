@@ -1,0 +1,36 @@
+{
+  "case_id": "CASE-4410",
+  "alert_id": "YB-AUD-004",
+  "fired_at": "2026-09-02T15:02:00Z",
+  "queue": "ysql-audit",
+  "score": 0.91,
+  "score_reason": "copy_pii_table_from_unknown_host",
+  "universe": {
+    "id": "univ-prod-us-east-1",
+    "name": "prod-us-east-1",
+    "env": "production"
+  },
+  "session": {
+    "database": "helios_orders",
+    "role": "analyst_ro",
+    "client_addr": "198.51.100.23",
+    "application_name": "psql",
+    "cab_ticket": null
+  },
+  "statement": {
+    "class": "EXPORT",
+    "command": "COPY",
+    "object": "public.customers",
+    "sql_redacted": "COPY public.customers TO STDOUT"
+  },
+  "signals": {
+    "schema_freeze_active": true,
+    "freeze_ends_at": "2026-09-15T00:00:00Z",
+    "privilege_grant": false,
+    "copy_export": true,
+    "new_client_cidr": true,
+    "host_allowlisted": false,
+    "pii_table": true
+  },
+  "notes": "Laptop IP, not the backup host. First COPY of customers from this address."
+}

@@ -1,0 +1,43 @@
+{
+  "case_id": "CASE-4872",
+  "alert_id": "ALT-001",
+  "fired_at": "2026-08-27T10:14:00Z",
+  "queue": "payments-risk",
+  "score": 0.81,
+  "score_reason": "amount_and_vendor_match_prior_settlement",
+  "merchant": {
+    "id": "M-1044",
+    "name": "Harbor Coffee Co",
+    "mcc": "5812",
+    "country": "US"
+  },
+  "transaction": {
+    "id": "TXN-9F22",
+    "type": "vendor_payout",
+    "amount_usd": 2400.00,
+    "currency": "USD",
+    "invoice_ref": "INV-4872",
+    "submitted_at": "2026-08-27T10:02:00Z"
+  },
+  "prior_match": {
+    "transaction_id": "TXN-4C11",
+    "settled_at": "2026-04-15T16:40:00Z",
+    "amount_usd": 2400.00,
+    "invoice_ref": "INV-4872",
+    "status": "settled"
+  },
+  "customer": {
+    "account_id": "ACC-8831",
+    "display_name": "A. Rivera",
+    "device_known": true,
+    "geo_matches_enrollment": true,
+    "password_reset_24h": false,
+    "payout_changed_24h": false
+  },
+  "signals": {
+    "new_device": false,
+    "impossible_travel": false,
+    "ato_bundle": false
+  },
+  "notes": "AP clerk resubmitted invoice INV-4872 after a vendor dunning email."
+}

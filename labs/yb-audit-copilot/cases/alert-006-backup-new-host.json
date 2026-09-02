@@ -1,0 +1,36 @@
+{
+  "case_id": "CASE-0918",
+  "alert_id": "YB-AUD-006",
+  "fired_at": "2026-09-02T02:41:00Z",
+  "queue": "ysql-audit",
+  "score": 0.71,
+  "score_reason": "backup_role_from_unknown_host",
+  "universe": {
+    "id": "univ-prod-us-east-1",
+    "name": "prod-us-east-1",
+    "env": "production"
+  },
+  "session": {
+    "database": "helios_orders",
+    "role": "yb_backup",
+    "client_addr": "10.8.4.99",
+    "application_name": "pg_dump",
+    "cab_ticket": null
+  },
+  "statement": {
+    "class": "READ",
+    "command": "SELECT",
+    "object": "public.payments",
+    "sql_redacted": "SELECT * FROM public.payments"
+  },
+  "signals": {
+    "schema_freeze_active": true,
+    "freeze_ends_at": "2026-09-15T00:00:00Z",
+    "privilege_grant": false,
+    "copy_export": false,
+    "new_client_cidr": true,
+    "host_allowlisted": false,
+    "replica_read": false
+  },
+  "notes": "Role name matches backup, but host 10.8.4.99 is not the allow-listed reader 10.8.4.12."
+}

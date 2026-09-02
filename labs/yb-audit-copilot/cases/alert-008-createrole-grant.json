@@ -1,0 +1,36 @@
+{
+  "case_id": "CASE-3308",
+  "alert_id": "YB-AUD-008",
+  "fired_at": "2026-09-02T16:22:00Z",
+  "queue": "ysql-audit",
+  "score": 0.93,
+  "score_reason": "grant_createrole_to_ci_role",
+  "universe": {
+    "id": "univ-prod-us-east-1",
+    "name": "prod-us-east-1",
+    "env": "production"
+  },
+  "session": {
+    "database": "helios_orders",
+    "role": "ci_deploy",
+    "client_addr": "10.9.1.17",
+    "application_name": "psql",
+    "cab_ticket": null
+  },
+  "statement": {
+    "class": "ROLE",
+    "command": "GRANT",
+    "object": "CREATEROLE",
+    "sql_redacted": "ALTER ROLE ci_deploy CREATEROLE"
+  },
+  "signals": {
+    "schema_freeze_active": true,
+    "freeze_ends_at": "2026-09-15T00:00:00Z",
+    "privilege_grant": true,
+    "copy_export": false,
+    "new_client_cidr": false,
+    "target_role": "ci_deploy",
+    "granted_privilege": "CREATEROLE"
+  },
+  "notes": "CI role can now create other roles. Not yb_superuser, but policy still says REVOKE."
+}

@@ -1,0 +1,36 @@
+{
+  "case_id": "CASE-6601",
+  "alert_id": "YB-AUD-009",
+  "fired_at": "2026-09-02T16:44:00Z",
+  "queue": "ysql-audit",
+  "score": 0.79,
+  "score_reason": "failed_login_burst_yb_superuser",
+  "universe": {
+    "id": "univ-prod-us-east-1",
+    "name": "prod-us-east-1",
+    "env": "production"
+  },
+  "session": {
+    "database": "helios_orders",
+    "role": "yb_superuser",
+    "client_addr": "203.0.113.40",
+    "application_name": "unknown",
+    "cab_ticket": null
+  },
+  "statement": {
+    "class": "AUTH",
+    "command": "FAILED LOGIN",
+    "object": "yb_superuser",
+    "sql_redacted": null
+  },
+  "signals": {
+    "schema_freeze_active": true,
+    "freeze_ends_at": "2026-09-15T00:00:00Z",
+    "privilege_grant": false,
+    "copy_export": false,
+    "new_client_cidr": true,
+    "failed_logins_5m": 27,
+    "successful_login": false
+  },
+  "notes": "27 failed logins in five minutes from one IP. No successful session."
+}

@@ -1,0 +1,37 @@
+{
+  "case_id": "CASE-5520",
+  "alert_id": "YB-AUD-005",
+  "fired_at": "2026-09-02T15:21:00Z",
+  "queue": "ysql-audit",
+  "score": 0.88,
+  "score_reason": "new_cidr_plus_alter_role",
+  "universe": {
+    "id": "univ-prod-us-east-1",
+    "name": "prod-us-east-1",
+    "env": "production"
+  },
+  "session": {
+    "database": "helios_orders",
+    "role": "ops_admin",
+    "client_addr": "203.0.113.77",
+    "client_region": "ap-south-1",
+    "application_name": "psql",
+    "cab_ticket": null
+  },
+  "statement": {
+    "class": "ROLE",
+    "command": "ALTER ROLE",
+    "object": "app_orders",
+    "sql_redacted": "ALTER ROLE app_orders WITH LOGIN"
+  },
+  "signals": {
+    "schema_freeze_active": true,
+    "freeze_ends_at": "2026-09-15T00:00:00Z",
+    "privilege_grant": false,
+    "copy_export": false,
+    "new_client_cidr": true,
+    "new_region": true,
+    "universe_region": "us-east-1"
+  },
+  "notes": "Session from ap-south-1. Universe lives in us-east-1. ALTER ROLE on the app login."
+}

@@ -1,0 +1,35 @@
+{
+  "case_id": "CASE-2208",
+  "alert_id": "YB-AUD-007",
+  "fired_at": "2026-09-02T16:05:00Z",
+  "queue": "ysql-audit",
+  "score": 0.64,
+  "score_reason": "ddl_during_freeze_with_cab_ticket",
+  "universe": {
+    "id": "univ-prod-us-east-1",
+    "name": "prod-us-east-1",
+    "env": "production"
+  },
+  "session": {
+    "database": "helios_orders",
+    "role": "app_migrate",
+    "client_addr": "10.2.9.44",
+    "application_name": "flyway",
+    "cab_ticket": "CAB-1842"
+  },
+  "statement": {
+    "class": "DDL",
+    "command": "CREATE INDEX",
+    "object": "public.orders",
+    "sql_redacted": "CREATE INDEX CONCURRENTLY idx_orders_ship_note ON public.orders (ship_note)"
+  },
+  "signals": {
+    "schema_freeze_active": true,
+    "freeze_ends_at": "2026-09-15T00:00:00Z",
+    "privilege_grant": false,
+    "copy_export": false,
+    "new_client_cidr": false,
+    "cab_object_match": true
+  },
+  "notes": "CAB-1842 approved an index on public.orders. Same migrate job as CASE-2204, but this session has a ticket."
+}

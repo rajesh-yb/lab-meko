@@ -1,0 +1,36 @@
+{
+  "case_id": "CASE-3301",
+  "alert_id": "YB-AUD-002",
+  "fired_at": "2026-09-02T14:40:00Z",
+  "queue": "ysql-audit",
+  "score": 0.96,
+  "score_reason": "grant_yb_superuser_to_app_role",
+  "universe": {
+    "id": "univ-prod-us-east-1",
+    "name": "prod-us-east-1",
+    "env": "production"
+  },
+  "session": {
+    "database": "helios_orders",
+    "role": "ci_deploy",
+    "client_addr": "10.9.1.17",
+    "application_name": "psql",
+    "cab_ticket": null
+  },
+  "statement": {
+    "class": "ROLE",
+    "command": "GRANT",
+    "object": "yb_superuser",
+    "sql_redacted": "GRANT yb_superuser TO app_orders"
+  },
+  "signals": {
+    "schema_freeze_active": true,
+    "freeze_ends_at": "2026-09-15T00:00:00Z",
+    "privilege_grant": true,
+    "copy_export": false,
+    "new_client_cidr": false,
+    "target_role": "app_orders",
+    "granted_privilege": "yb_superuser"
+  },
+  "notes": "CI jump host granted yb_superuser to the application role app_orders."
+}

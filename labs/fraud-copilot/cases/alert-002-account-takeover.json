@@ -1,0 +1,39 @@
+{
+  "case_id": "CASE-5510",
+  "alert_id": "ALT-002",
+  "fired_at": "2026-08-27T11:03:00Z",
+  "queue": "payments-risk",
+  "score": 0.94,
+  "score_reason": "new_device_plus_reset_plus_payout_change",
+  "merchant": {
+    "id": "M-2201",
+    "name": "Nimbus Gadgets",
+    "mcc": "5732",
+    "country": "US"
+  },
+  "transaction": {
+    "id": "TXN-AA90",
+    "type": "payout_destination_change",
+    "amount_usd": 12850.00,
+    "currency": "USD",
+    "invoice_ref": null,
+    "submitted_at": "2026-08-27T10:58:00Z"
+  },
+  "prior_match": null,
+  "customer": {
+    "account_id": "ACC-2209",
+    "display_name": "J. Chen",
+    "device_known": false,
+    "geo_matches_enrollment": false,
+    "password_reset_24h": true,
+    "payout_changed_24h": true
+  },
+  "signals": {
+    "new_device": true,
+    "impossible_travel": true,
+    "ato_bundle": true,
+    "enrollment_geo": "US-CA",
+    "event_geo": "RO-B"
+  },
+  "notes": "Password reset at 10:41 UTC. New payout beneficiary added 12 minutes later from unseen device."
+}
